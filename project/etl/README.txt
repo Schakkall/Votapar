@@ -1,1 +1,1 @@
-Os arquivos estão em
+Os arquivos JSON e SQL estão na pasta do Gooogle Drive
