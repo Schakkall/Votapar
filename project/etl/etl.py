@@ -43,7 +43,7 @@ def write_file(string, file_path):
 
 def proposicoes_to_sql(database):
     '''
-        Saves a SQL insert DML script into output_file and returns de number of elements
+        Saves a SQL insert DML script into output_file and returns the number of elements
     '''
     sql = '''
 INSERT INTO 
@@ -62,8 +62,7 @@ INSERT INTO
         for prop in database:
             output_file.write(sql.format(
                 id=ID['proposicoes'], ano=prop['ano'], numero=prop['numero'], sigla=prop['sigla']))
-            votacoes_to_sql(prop['votacoes'], ID['proposicoes'],
-                            votacoes_file, votos_file, orientacao_bancada_file)
+            votacoes_to_sql(prop['votacoes'], ID['proposicoes'], votacoes_file, votos_file, orientacao_bancada_file)
             ID['proposicoes'] += 1
 
         output_file.close()
@@ -75,7 +74,7 @@ INSERT INTO
 
 def votacoes_to_sql(database, master_id, output_file, votos_file, orientacao_bancada_file):
     '''
-        Saves a SQL insert DML script into output_file and returns de number of elements
+        Saves a SQL insert DML script into output_file and returns the number of elements
     '''
     sql = '''
 INSERT INTO public.tb_votacoes(

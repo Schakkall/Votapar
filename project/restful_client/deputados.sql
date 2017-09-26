@@ -1034,7 +1034,7 @@
             id, uri, nome, siglaPartido, uriPartido, 
             siglaUf, idLegislatura, urlFoto
         ) VALUES (
-            141439, 'https: //dadosabertos.camara.leg.br/api/v2/deputados/141439', 'CHICO D'ANGELO', 'PT', 'https: //dadosabertos.camara.leg.br/api/v2/partidos/36844'
+            141439, 'https: //dadosabertos.camara.leg.br/api/v2/deputados/141439', 'CHICO D\'ANGELO', 'PT', 'https: //dadosabertos.camara.leg.br/api/v2/partidos/36844'
             'RJ', '55', 'http: //www.camara.leg.br/internet/deputado/bandep/141439.jpg'
         );
 
