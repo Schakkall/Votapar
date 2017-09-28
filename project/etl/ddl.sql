@@ -25,6 +25,12 @@ CREATE TABLE public.tb_votacoes(
 ALTER TABLE public.tb_votacoes
     ADD CONSTRAINT pk_tb_votacoes PRIMARY KEY(id);
 
+ALTER TABLE public.tb_votacoes
+    ADD CONSTRAINT fK_proposicao 
+        FOREIGN KEY (proposicao) 
+            REFERENCES public.tb_proposicoes(id);
+    
+
 CREATE TABLE public.tb_votos(
     id BIGINT NOT NULL,
     votacao BIGINT NOT NULL,
@@ -38,6 +44,11 @@ CREATE TABLE public.tb_votos(
 ALTER TABLE public.tb_votos
     ADD CONSTRAINT pk_tb_votos PRIMARY KEY(id);
 
+ALTER TABLE public.tb_votos
+    ADD CONSTRAINT fk_votacao
+        FOREIGN KEY (votacao) 
+            REFERENCES public.tb_votacoes(id);
+
 
 CREATE TABLE public.tb_orientacao_bancada(
     id BIGINT NOT NULL,
@@ -48,3 +59,8 @@ CREATE TABLE public.tb_orientacao_bancada(
 
 ALTER TABLE public.tb_orientacao_bancada
     ADD CONSTRAINT pk_tb_orientacao_bancada PRIMARY KEY(id);
+
+ALTER TABLE public.tb_orientacao_bancada
+    ADD CONSTRAINT fk_votacao
+        FOREIGN KEY (votacao) 
+            REFERENCES public.tb_orientacao_bancada(id);
